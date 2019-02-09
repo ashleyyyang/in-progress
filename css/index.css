@@ -7,6 +7,7 @@ html, body {
     width: 100%;
     
   }
+  
   a {
     
     width: 250px;
@@ -17,6 +18,7 @@ html, body {
 
     transform: translate3d(-50%, -50%, 0);
   }
+
   a span {
     background-image: linear-gradient(to bottom, white 0%, transparent 0%), 
         linear-gradient(to right, #92B7FF 33%, #FF9892 33%, #FF9892 66%, #FFCD92 66%);
@@ -29,6 +31,14 @@ html, body {
   }
   
 
+
+  /* SELECTION COLOR *****************************************************************************
+*********************************************************************************** */
+
+  ::-moz-selection { 
+      background: #FF9892 }
+  ::selection { 
+      background: #FF9892 }
 
 
 /* TYPOGRAPHY *****************************************************************************
@@ -43,7 +53,6 @@ h1{ /* https://codepen.io/dennisgarrn/ */
     padding-top:10px;
     padding-bottom:10px;
   }
-
 
 h2{
     font-size: 2.5rem;
@@ -65,10 +74,8 @@ h3{
 
   .introduction {
       height: 100%;
-
+      width: 100%;
 }
-
-
 
 
 .intro-text {
@@ -103,6 +110,104 @@ h3{
 }
 
 
+
+  
+  /***************************           Cards            *******************************/  
+  /***************************           Cards            *******************************/  
+  /***************************           Cards            *******************************/
+
+  
+  .band {
+    padding-top:20%;  
+    position: relative;
+    width: 80%;
+    max-width: 1240px;
+    margin: 0 auto;
+    
+    align-items: left;
+    display: grid;
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+  
+  @media only screen and (min-width: 500px) {
+    .band {
+      grid-template-columns: 1fr 1fr;
+    }  
+  }
+  
+  @media only screen and (min-width: 850px) {
+    .band {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  
+  
+  .card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+  }
+  
+  .card:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+  
+  .card article {
+    padding: 20px;
+    flex: 1;
+     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  /* typography */
+  .card {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .card p { 
+    flex: 1; /* make p grow to fill available space*/
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+
+  }
+  
+  .card span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+  }
+
+
+
+
+
 .artwork {
     
     padding-left:10%;
@@ -125,10 +230,12 @@ h3{
 
 
 
+
+
 body {
 
     font-family: 'Roboto', sans-serif;
-    font-kerning: 0.8rem;
+    letter-spacing: 0.05rem;
     font-size: 1.5rem;
 
     
