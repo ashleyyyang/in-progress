@@ -1,3 +1,5 @@
+//3d title
+
 jQuery(document).ready(function(){
     $('h1').mousemove(function(e){
       var rXP = (e.pageX - this.offsetLeft-$(this).width()/2);
@@ -7,7 +9,7 @@ jQuery(document).ready(function(){
  });
 
 
- $(".card").click(function() {
-    window.location = $(this).find("a").attr("href"); 
-    return false;
-  });
+
+
+
+

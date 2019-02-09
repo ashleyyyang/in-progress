@@ -68,6 +68,12 @@ h3{
     font-family:'Rubik', 400, sans-serif;
 }
 
+h3{
+  font-size: 1.4rem;
+  line-height: 1.25;
+  font-family:'Rubik', 400, sans-serif;
+}
+
 /* PAGES *******************************************************************************
 ***************************************************************************************/
 
@@ -110,100 +116,93 @@ h3{
 }
 
 
-
-  
+  /**************************************************************************************/
+  /**************************************************************************************/  
   /***************************           Cards            *******************************/  
-  /***************************           Cards            *******************************/  
-  /***************************           Cards            *******************************/
+  /**************************************************************************************/
+  /***** https://getflywheel.com/layout/flexbox-create-modern-card-design-layout/ ******/  
+  /**************************************************************************************/
+  /**************************************************************************************/
 
-  
-  .band {
-    padding-top:20%;  
-    position: relative;
-    width: 80%;
-    max-width: 1240px;
-    margin: 0 auto;
-    
-    align-items: left;
-    display: grid;
-    
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-  }
-  
-  @media only screen and (min-width: 500px) {
-    .band {
-      grid-template-columns: 1fr 1fr;
-    }  
-  }
-  
-  @media only screen and (min-width: 850px) {
-    .band {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+pre {
+	background: #eee;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.25;
+	margin-bottom: 1.2em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.2em;
+}
+
+
+
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+
+.card {
+	background: white;
+  margin-bottom: .8em;	
+  box-shadow: 0px 0px 0px grey;
+  -webkit-transition:  box-shadow .3s ease-out;
+     box-shadow: .8px .9px 3px grey;
+}
+
+.card:hover{ 
+  box-shadow: 1px 8px 20px grey;
+ -webkit-transition:  box-shadow .3s ease-in;
+}
+
+
+
+.card a:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+}
+
+.card-content {
+  padding: 0.8em;
+  padding-top: 0em;
+  padding-bottom:0.3em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+
+}
+
+.card-content p {
+  font-size: 80%;
+  font-size: 0.8rem;
+}
+
+/* Flexbox stuff */
+
+@media screen and (min-width: 40em) {
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-  }
-  
-  
-  .card {
-    background: white;
-    text-decoration: none;
-    color: #444;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    
-    position: relative;
-    top: 0;
-    transition: all .1s ease-in;
-  }
-  
-  .card:hover {
-    top: -2px;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-  }
-  
-  .card article {
-    padding: 20px;
-    flex: 1;
-     
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .card .thumb {
-    padding-bottom: 60%;
-    background-size: cover;
-    background-position: center center;
-  }
-  
-  /* typography */
-  .card {
-    font-size: 20px;
-    margin: 0;
-    color: #333;
-  }
-  
-  .card p { 
-    flex: 1; /* make p grow to fill available space*/
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.05rem;
-    font-size: 0.8rem;
-    line-height: 1.4;
 
-  }
-  
-  .card span {
-    font-size: 12px;
-    font-weight: bold;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    margin: 2em 0 0 0;
-  }
+    .card {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
 
+@media screen and (min-width: 60em) {
+
+    .card {
+        flex: 0 1 calc(25% - 1em);
+    }
+}
 
 
 
@@ -235,7 +234,7 @@ h3{
 body {
 
     font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.05rem;
+    
     font-size: 1.5rem;
 
     
