@@ -9,7 +9,14 @@ jQuery(document).ready(function(){
  });
 
 
+var cardheight = img.height;
+var numcard
 
+document.getElementById('img.height')
+
+for (var i = 0; i <= COL_COUNT; i++) {
+  cardheight = img.height;
+}
 
 
 
