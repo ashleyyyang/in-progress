@@ -1,13 +1,97 @@
 
+
+.sun {
+  z-index:0;
+/* 
+ * Make the initial position to be the center of the circle you want this
+ * object follow.
+ */
+position: absolute;
+left: 40%;
+bottom: -90%;
+
+/*
+ * Sets up the animation duration, timing-function (or easing)
+ * and iteration-count. Ensure you use the appropriate vendor-specific 
+ * prefixes as well as the official syntax for now. Remember, tools like 
+ * CSS Please are your friends!
+ */
+-webkit-animation: myOrbit 15s linear infinite; /* Chrome, Safari 5 */
+
+   -moz-animation: myOrbit 15s linear infinite; /* Firefox 5-15 */
+     -o-animation: myOrbit 15s linear infinite; /* Opera 12+ */
+        animation: myOrbit 15s linear infinite; /* Chrome, Firefox 16+, 
+                                                  IE 10+, Safari 5 */
+
+
+
+}
+
+/*
+* Set up the keyframes to actually describe the begining and end states of 
+* the animation.  The browser will interpolate all the frames between these 
+* points.  Again, remember your vendor-specific prefixes for now!
+*/
+
+@-webkit-keyframes myOrbit {
+from { -webkit-transform: rotate(210deg) translateX(300px) rotate(-210deg); }
+to   { -webkit-transform: rotate(335deg) translateX(335px) rotate(-335deg); }
+}
+/*
+@-moz-keyframes myOrbit {
+from { -moz-transform: rotate(200deg) translateX(250px) rotate(-200deg); }
+to   { -moz-transform: rotate(340deg) translateX(250px) rotate(340deg); }
+}
+
+@-o-keyframes myOrbit {
+from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+*/
+
+
 /* LINKS *******************************************************************************
 **************************************Antoinette Janus https://codepen.io/internette */
 
+
+
+
 html, body {
-    height: 100%;
-    width: 100%;
-    
-  }
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin:0;
+padding:0;
+  overflow-x: hidden; 
   
+}
+
+body {
+
+    font-family: 'Karla', sans-serif;
+    background-color: #ffffff;
+    font-size: 1.5rem;
+    display:flex;
+flex-flow: wrap;
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+  
+
   a {
     
     width: 250px;
@@ -30,21 +114,25 @@ html, body {
     background-position: 0%;
   }
   
+  a:hover {
+    cursor: url(http://cur.cursors-4u.net/nature/nat-10/nat970.ani), 
+  url(http://cur.cursors-4u.net/nature/nat-10/nat970.gif), auto !important;
+  }
 
 
   /* SELECTION COLOR *****************************************************************************
 *********************************************************************************** */
 
   ::-moz-selection { 
-      background: #FF9892 }
+      background: #EC9462 }
   ::selection { 
-      background: #FF9892 }
+      background: #EC9462 }
 
 
 /* TYPOGRAPHY *****************************************************************************
 *********************************************************************************** */
-
-h1{ /* https://codepen.io/dennisgarrn/ */
+/*
+h1{  https://codepen.io/dennisgarrn/ 
     text-transform:uppercase;
     font-size: 3.6rem;
     line-height: 1.25;
@@ -53,191 +141,398 @@ h1{ /* https://codepen.io/dennisgarrn/ */
     padding-top:10px;
     padding-bottom:10px;
   }
+*/
 
 h2{
     font-size: 2.5rem;
     line-height: 1.25;
     letter-spacing: -.1rem;
-    font-family:'Rubik', sans-serif;
+    font-family:'Karla', sans-serif;
     padding:0px;
 }
 
 h3{
     font-size: 1.7rem;
-    line-height: 1.25;
-    font-family:'Rubik', 400, sans-serif;
+    line-height: 1.7rem;
+    font-family:'Karla', 400, sans-serif;
 }
 
 h3{
   font-size: 1.4rem;
   line-height: 1.25;
-  font-family:'Rubik', 400, sans-serif;
+  font-family:'Karla', 400, sans-serif;
 }
 
 /* PAGES *******************************************************************************
 ***************************************************************************************/
 
+.header-bar {
+  margin:0;
+  position: relative;
+  background-color: #EC9462;
+  height: 25%;
+  width:100%;
+  min-height: 200px;
 
-  .introduction {
-      height: 100%;
-      width: 100%;
+}
+
+.header-bar-text {
+  color: #ffffff;
+  position: absolute;
+  bottom:0;
+  left:0;
+  padding-left:20px;
+  padding-right:20px;
+  margin-bottom:-8px;
+
+}
+
+.nav-bar {
+  width: 100%;
+  overflow: hidden;
+z-index:100;
+  padding: 0px;
+  position: sticky;
+  top: -24px;
+  margin-top:-24px;
+  margin-bottom:-24px;
+  
+
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #EC9462;
+  font-size: 1.3rem;
+}
+
+.nav-bar a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #EC9462;
+  font-size: 1.3rem;
+}
+
+
+
+.nav-bar ul {
+
+  position: relative;
+  list-style: none;
+  background-color: #ffffff;
+  text-align: left;
+  padding:0;
+
+}
+
+.nav-bar li {
+  display: inline-block;
+  text-align: center;
+  padding-left: 20px;
+  padding-right:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+
+
+
+
+.introduction {
+  position: relative;
+    height: 25%;
+    width: 100%;
+    background-color: #ffffff;
+    
 }
 
 
 .intro-text {
-    position: absolute;
-    left: 25%;
-    top: 25%;
-    right:25%;
-    bottom: 25%;
+  position: absolute;
+  top:-20px;
+
+  padding-left:20px;
+  padding-right:50%;
+  padding-top: 0%;
+  
+
 }
 
-.about {
+
+
+@media screen and (max-width:800px) {
+
+  .header-bar-text {
+    text-align:center;
+    width:100%;
+  }
+
+
+    .nav-bar ul {
+      text-align: center;
+    }
+
+    .nav-bar li {
+      display: inline-block;
+    }
+  
+    .intro-text {
+      text-align: center;
+      width: 100%;
+      padding-right:20px;
+      padding-left: 20px;
+
+
+    }
+  }
+
+
+
+  .square-container {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  
+  .square {
     position: relative;
-    margin:2%;
+    flex-basis: calc(33.33333% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 0px grey;
+    -webkit-transition:  box-shadow .3s ease-out;
+    box-shadow: .8px .9px 3px grey;
+  }
+  
+  .square::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+  
+  .square .content {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
 
-    padding-left:10%;
-    padding-right:10%;
-    padding-top:5%;
-    padding-bottom:5%;
-    background-color: #D5DFF3;
-    
+  }
+
+@media screen and (max-width:900px) {
+  .square {
+    flex-basis: calc(50% - 20px);
+  }
 }
+
+@media screen and (max-width:620px) {
+  .square {
+    flex-basis: calc(100% - 20px);
+  }
+}
+
+
+
+.content .content-overlay {
+  background: rgba(0,0,0,1);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  box-shadow: 1px 8px 20px grey;
+  -webkit-transition:  box-shadow .3s ease-in;
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+
+
 
 
 .work {
-    
+    position: relative;
+    width:100%;
     padding-left:10%;
     padding-right:10%;
     padding-top:5%;
     padding-bottom:5%;
-    background-color: #FF9892;
+
+
 
 }
 
 
-  /**************************************************************************************/
-  /**************************************************************************************/  
-  /***************************           Cards            *******************************/  
-  /**************************************************************************************/
-  /***** https://getflywheel.com/layout/flexbox-create-modern-card-design-layout/ ******/  
-  /**************************************************************************************/
-  /**************************************************************************************/
-
-
-pre {
-	background: #eee;
-	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.25;
-	margin-bottom: 1.2em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.2em;
+/* hmmmm
+::selection {
+  background-color: #4EC6DE;
 }
+
+.tabbed {
+  width: 700px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.tabbed > input {
+  display: none;
+}
+
+.tabbed > label {
+  display: block;
+  float: left;
+  padding: 12px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+  background: #4EC6DE;
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+
+.tabs > div {
+  width: 700px;
+  position: absolute;
+  border: 2px solid #4EC6DE;
+  padding: 10px 30px 40px;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4) {
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .tabbed {
+    width: 400px;
+  }
+
+  .tabbed > label {
+    display: none;
+  }
+
+  .tabs > div {
+    width: 400px;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    margin-bottom: 60px;
+  }
+
+  .tabs > div h3 {
+    border-bottom: 2px solid #4EC6DE;
+    padding-bottom: .5em;
+  }
+}
+
+
+*/
 
 
 
 
 img {
-	display: block;
+  display: block;
 	border: 0;
 	width: 100%;
 	height: auto;
 }
 
 
-.card {
-	background: white;
-  margin-bottom: .8em;	
-  box-shadow: 0px 0px 0px grey;
-  -webkit-transition:  box-shadow .3s ease-out;
-     box-shadow: .8px .9px 3px grey;
-}
 
-.card:hover{ 
-  box-shadow: 1px 8px 20px grey;
- -webkit-transition:  box-shadow .3s ease-in;
-}
-
-
-
-.card a:hover {
-	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
-}
-
-.card-content {
-  padding: 0.8em;
-  padding-top: 0em;
-  padding-bottom:0.3em;
-}
-
-.card-content h2 {
-	margin-top: 0;
-
-}
-
-.card-content p {
-  font-size: 80%;
-  font-size: 0.8rem;
-}
-
-/* Flexbox stuff */
-
-@media screen and (min-width: 40em) {
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .card {
-        flex: 0 1 calc(50% - 1em);
-    }
-}
-
-@media screen and (min-width: 60em) {
-
-    .card {
-        flex: 0 1 calc(25% - 1em);
-    }
-}
-
-
-
-
-.artwork {
-    
-    padding-left:10%;
-    padding-right:10%;
-    padding-top:5%;
-    padding-bottom:5%;
-    background-color: #ffffff;
-
-}
 
 
 .footer {
-    padding-left:10%;
-    padding-right:10%;
-    padding-top:2%;
-    padding-bottom:2%;
-    background-color: #D5DFF3;
-    font-size: 1rem;
+  position: relative;
+  bottom:0;
+
+  width:100%;
+min-height: 100px;
+padding:20px;
+
+    background-color: #EC9462;
+}
+
+
+.footer-text {
+  position:absolute;
+  top:50%;
+  left:20px;
+  font-size: 1rem;
 }
 
 
 
-
-
-body {
-
-    font-family: 'Roboto', sans-serif;
     
-    font-size: 1.5rem;
 
     
         
-}
+
 
