@@ -1,65 +1,5 @@
 
 
-.sun {
-  z-index:0;
-/* 
- * Make the initial position to be the center of the circle you want this
- * object follow.
- */
-position: absolute;
-left: 40%;
-bottom: -90%;
-
-/*
- * Sets up the animation duration, timing-function (or easing)
- * and iteration-count. Ensure you use the appropriate vendor-specific 
- * prefixes as well as the official syntax for now. Remember, tools like 
- * CSS Please are your friends!
- */
--webkit-animation: myOrbit 15s linear infinite; /* Chrome, Safari 5 */
-
-   -moz-animation: myOrbit 15s linear infinite; /* Firefox 5-15 */
-     -o-animation: myOrbit 15s linear infinite; /* Opera 12+ */
-        animation: myOrbit 15s linear infinite; /* Chrome, Firefox 16+, 
-                                                  IE 10+, Safari 5 */
-
-
-
-}
-
-/*
-* Set up the keyframes to actually describe the begining and end states of 
-* the animation.  The browser will interpolate all the frames between these 
-* points.  Again, remember your vendor-specific prefixes for now!
-*/
-
-@-webkit-keyframes myOrbit {
-from { -webkit-transform: rotate(210deg) translateX(300px) rotate(-210deg); }
-to   { -webkit-transform: rotate(335deg) translateX(335px) rotate(-335deg); }
-}
-/*
-@-moz-keyframes myOrbit {
-from { -moz-transform: rotate(200deg) translateX(250px) rotate(-200deg); }
-to   { -moz-transform: rotate(340deg) translateX(250px) rotate(340deg); }
-}
-
-@-o-keyframes myOrbit {
-from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
-to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-
-@keyframes myOrbit {
-from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-*/
-
-
-/* LINKS *******************************************************************************
-**************************************Antoinette Janus https://codepen.io/internette */
-
-
-
 
 html, body {
   box-sizing: border-box;
@@ -81,6 +21,7 @@ flex-flow: wrap;
 }
 
 
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -92,27 +33,27 @@ img {
 
   
 
-  a {
-    
-    width: 250px;
-    text-decoration: none;
+:root {
+  --mainColor: #EC9462;
+}
 
-    color: black;
-    line-height: 1.5rem;
+a {
+  background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+  color: #000;
+  text-decoration: none;
+}
 
-    transform: translate3d(-50%, -50%, 0);
-  }
+a:hover {
+  background-position: 0 100%;
+  background-size: auto 9px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+}
 
-  a span {
-    background-image: linear-gradient(to bottom, white 0%, transparent 0%), 
-        linear-gradient(to right, #92B7FF 33%, #FF9892 33%, #FF9892 66%, #FFCD92 66%);
-    background-size: 306% 100%;
-    background-position: 100% 0;
-    transition: 1s background-position;
-  }
-  a:hover span {
-    background-position: 0%;
-  }
+
   
   a:hover {
     cursor: url(http://cur.cursors-4u.net/nature/nat-10/nat970.ani), 
@@ -129,47 +70,63 @@ img {
       background: #EC9462 }
 
 
-/* TYPOGRAPHY *****************************************************************************
-*********************************************************************************** */
-/*
-h1{  https://codepen.io/dennisgarrn/ 
-    text-transform:uppercase;
-    font-size: 3.6rem;
-    line-height: 1.25;
-    letter-spacing: -.1rem;
-    font-family:'Rubik', sans-serif;
-    padding-top:10px;
-    padding-bottom:10px;
-  }
-*/
-
-h2{
-    font-size: 2.5rem;
-    line-height: 1.25;
-    letter-spacing: -.1rem;
-    font-family:'Karla', sans-serif;
-    padding:0px;
-}
-
-h3{
-    font-size: 1.7rem;
-    line-height: 1.7rem;
-    font-family:'Karla', 400, sans-serif;
-}
-
-h3{
-  font-size: 1.4rem;
-  line-height: 1.25;
-  font-family:'Karla', 400, sans-serif;
-}
 
 /* PAGES *******************************************************************************
 ***************************************************************************************/
 
+
+
+
+.sun {
+  z-index:0;
+/* 
+ * initial position center of the circle path
+ */
+position: absolute;
+left: 40%;
+bottom: -90%;
+
+
+-webkit-animation: mySunset 15s linear infinite; /* Chrome, Safari 5 */
+   -moz-animation: mySunset 15s linear infinite; /* Firefox 5-15 */
+     -o-animation: mySunset 15s linear infinite; /* Opera 12+ */
+        animation: mySunset 15s linear infinite; /* Chrome, Firefox 16+, 
+                                                  IE 10+, Safari 5 */
+
+}
+
+
+@-webkit-keyframes mySunset {
+from { -webkit-transform: rotate(204deg) translateX(300px) rotate(-204deg); }
+to   { -webkit-transform: rotate(337deg) translateX(335px) rotate(-337deg); }
+}
+
+@-moz-keyframes mySunset {
+from { -moz-transform: rotate(204deg) translateX(300px) rotate(-204deg); }
+to   { -moz-transform: rotate(337deg) translateX(335px) rotate(-337deg); }
+}
+
+@-o-keyframes mySunset {
+from { -o-transform: rotate(204deg) translateX(300px) rotate(-204deg);}
+to   { -o-transform: rotate(337deg) translateX(335px) rotate(-337deg); }
+}
+
+@keyframes mySunset {
+from { transform: rotate(204deg) translateX(300px) rotate(-204deg);}
+to   { transform: rotate(337deg) translateX(335px) rotate(-337deg); }
+}
+
+
+
+
+
+
+
+
 .header-bar {
   margin:0;
   position: relative;
-  background-color: #EC9462;
+  background-color: #9DD2F6;
   height: 25%;
   width:100%;
   min-height: 200px;
@@ -181,7 +138,7 @@ h3{
   position: absolute;
   bottom:0;
   left:0;
-  padding-left:20px;
+  padding-left:40px;
   padding-right:20px;
   margin-bottom:-8px;
 
@@ -204,13 +161,13 @@ z-index:100;
   text-decoration: none;
   color: #EC9462;
   font-size: 1.3rem;
+  background: none;
 }
 
 .nav-bar a:hover {
   text-decoration: none;
-  font-weight: bold;
-  color: #EC9462;
-  font-size: 1.3rem;
+color: #ffffff;
+background-color: #EC9462;
 }
 
 
@@ -228,7 +185,7 @@ z-index:100;
 .nav-bar li {
   display: inline-block;
   text-align: center;
-  padding-left: 20px;
+  padding-left: 40px;
   padding-right:20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -241,7 +198,8 @@ z-index:100;
 
 .introduction {
   position: relative;
-    height: 25%;
+
+    padding-bottom: 30px;
     width: 100%;
     background-color: #ffffff;
     
@@ -249,10 +207,10 @@ z-index:100;
 
 
 .intro-text {
-  position: absolute;
+  position: relative;
   top:-20px;
-
-  padding-left:20px;
+  color: #9DD2F6;
+  padding-left:40px;
   padding-right:50%;
   padding-top: 0%;
   
@@ -266,6 +224,8 @@ z-index:100;
   .header-bar-text {
     text-align:center;
     width:100%;
+    padding-left: 20px;
+    padding-right:20px;
   }
 
 
@@ -275,6 +235,8 @@ z-index:100;
 
     .nav-bar li {
       display: inline-block;
+      padding-left:20px;
+      padding-right:20px;
     }
   
     .intro-text {
@@ -286,6 +248,13 @@ z-index:100;
 
     }
   }
+
+
+
+
+  .square-container a {
+    background:none;
+}
 
 
 
@@ -319,13 +288,13 @@ z-index:100;
 
   }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:1200px) {
   .square {
     flex-basis: calc(50% - 20px);
   }
 }
 
-@media screen and (max-width:620px) {
+@media screen and (max-width:800px) {
   .square {
     flex-basis: calc(100% - 20px);
   }
@@ -401,99 +370,14 @@ z-index:100;
 .work {
     position: relative;
     width:100%;
-    padding-left:10%;
-    padding-right:10%;
+    padding-left:40px;
+    padding-right:40px;
     padding-top:5%;
     padding-bottom:5%;
 
 
 
 }
-
-
-/* hmmmm
-::selection {
-  background-color: #4EC6DE;
-}
-
-.tabbed {
-  width: 700px;
-  margin: 50px auto;
-  position: relative;
-}
-
-.tabbed > input {
-  display: none;
-}
-
-.tabbed > label {
-  display: block;
-  float: left;
-  padding: 12px 20px;
-  margin-right: 5px;
-  cursor: pointer;
-  transition: background-color .3s;
-}
-
-.tabbed > label:hover,
-.tabbed > input:checked + label {
-  background: #4EC6DE;
-}
-
-.tabs {
-  clear: both;
-  perspective: 600px;
-}
-
-.tabs > div {
-  width: 700px;
-  position: absolute;
-  border: 2px solid #4EC6DE;
-  padding: 10px 30px 40px;
-  line-height: 1.4em;
-  opacity: 0;
-  transform: rotateX(-20deg);
-  transform-origin: top center;
-  transition: opacity .3s, transform 1s;
-  z-index: 0;
-}
-
-#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
-#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
-#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
-#tab-nav-4:checked ~ .tabs > div:nth-of-type(4) {
-  transform: rotateX(0);
-  opacity: 1;
-  z-index: 1;
-}
-
-@media screen and (max-width: 700px) {
-  .tabbed {
-    width: 400px;
-  }
-
-  .tabbed > label {
-    display: none;
-  }
-
-  .tabs > div {
-    width: 400px;
-    border: none;
-    padding: 0;
-    opacity: 1;
-    position: relative;
-    transform: none;
-    margin-bottom: 60px;
-  }
-
-  .tabs > div h3 {
-    border-bottom: 2px solid #4EC6DE;
-    padding-bottom: .5em;
-  }
-}
-
-
-*/
 
 
 
@@ -509,6 +393,8 @@ img {
 
 
 
+
+
 .footer {
   position: relative;
   bottom:0;
@@ -517,15 +403,23 @@ img {
 min-height: 100px;
 padding:20px;
 
-    background-color: #EC9462;
+    background-color: #9DD2F6;
 }
+
+@media screen and(max-width:800px) {
+  .footer .footer-about {
+    text-align:center;
+  }
+}
+
 
 
 .footer-text {
   position:absolute;
   top:50%;
-  left:20px;
+  left:40px;
   font-size: 1rem;
+  color: white;
 }
 
 
