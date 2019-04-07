@@ -31,11 +31,36 @@ U  \ V  V /  U|_____|  |_____|  \____|\_)-\___/  |_|  |_|  |_____|
 <!DOCTYPE html>
 
 <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136768197-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-136768197-1');
+</script>
+
+
+<script>
+    allimages.addEventListener('load', function(){
+        var allimages= document.getElementsByTagName('img');
+        for (var i=0; i<allimages.length; i++) {
+            if (allimages[i].getAttribute('data-src')) {
+                allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+            }
+        }
+    }, false)
+    </script>
+
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>More Ashley</title>
+    <title>More!</title>
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
@@ -43,7 +68,7 @@ U  \ V  V /  U|_____|  |_____|  \____|\_)-\___/  |_|  |_|  |_____|
 
 
         <!-- js -->
-        <script type="text/javascript" src="js/font.js"></script>
+        <script type="text/javascript" src="/js/font.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
 
@@ -70,19 +95,19 @@ U  \ V  V /  U|_____|  |_____|  \____|\_)-\___/  |_|  |_|  |_____|
 
     <div class="header-bar" >
         <div class="sun">
-            <img src="img/sun-abt.png" id="sun">
+            <span class="sun-img"></span>
         </div>
             
 
         <div class="header-bar-text">
-            <h1>Hello — I&#8217;m Ashley!</h1>
+            <h1>More!</h1>
         </div>
     </div>
 
 
     <div class="nav-bar">
             <ul>
-                    <li class="design"><a href="index">design</a></li>
+                    <li class="design"><a href="http://ashleyyang.ca">design</a></li>
                     <li class="more"><a href="more">more</a></li>
                     <li class="about"><a href="about">about</a></li>
             </ul>
@@ -90,7 +115,7 @@ U  \ V  V /  U|_____|  |_____|  \____|\_)-\___/  |_|  |_|  |_____|
     
         <div class="introduction">
             <div class="intro-text">
-                <h3>Exploring the world through <u>art</u>.</h3>
+                <!--<h3>Exploring the world through <u>art</u>.</h3>-->
     
             </div>
         </div>
@@ -106,17 +131,18 @@ U  \ V  V /  U|_____|  |_____|  \____|\_)-\___/  |_|  |_|  |_____|
 
                     <div class="square">
                         <div class="content">
-                            <a href="more/paintings" target="_blank">
+                            <a href="more/art" class="thumbnail">
                                 <div class="content-overlay"></div>
-                                <img class="content-image" src="art/self_portrait_sq.jpg">
+                                
+                                <img class="content-image" src="art/doggos.png" data-src="art/doggos.png">
                                 <div class="content-details">
-                                <h3 class="content-title">Paintings</h3>
+                                <h3 class="content-title">Art</h3>
  
                                 </div>
                             </a>
                         </div>
                     </div>
-                  
+                  <!--
                     <div class="square">
                       <div class="content">
                             <a href="more/digital" target="_blank">
@@ -141,16 +167,16 @@ U  \ V  V /  U|_____|  |_____|  \____|\_)-\___/  |_|  |_|  |_____|
                                 </div>
                             </a>
                       </div>
-                    </div>
+                    </div> -->
                   
 
                     <div class="square">
                         <div class="content">
-                              <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+                              <a href="" target="_blank">
                                   <div class="content-overlay"></div>
                                   <img class="content-image" src="art/syde_logo1.png">
                                   <div class="content-details">
-                                  <h3 class="content-title">Code</h3>
+                                  <h3 class="content-title">Code <br>(coming soon)</h3>
   
                                   </div>
                               </a>
